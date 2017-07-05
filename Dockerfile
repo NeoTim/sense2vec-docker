@@ -1,6 +1,6 @@
 FROM philcryer/min-wheezy
 
-RUN apt-get -y update && apt-get -y install git python2.7-dev python-pip vim libopenblas-dev build-essential
+RUN apt-get -y update && apt-get -y install git python2.7-dev python-pip vim libopenblas-dev build-essential libgomp1
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
