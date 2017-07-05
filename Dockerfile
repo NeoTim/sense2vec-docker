@@ -1,6 +1,6 @@
 FROM philcryer/min-wheezy
 
-RUN apt-get -y update && apt-get -y install git python3-dev python3-pip vim build-essential
+RUN apt-get -y update && apt-get -y install git python2.7-dev python-pip vim libopenblas-dev build-essential
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
@@ -24,7 +24,7 @@ RUN git clone https://github.com/explosion/sense2vec.git && \
 
 RUN sputnik --name sense2vec --repository-url http://index.spacy.io install reddit_vectors
 
-RUN apt-get remove --purge -y vim build-essential git mercurial subversion $(apt-mark showauto) && rm -rf /var/lib/apt/lists/*
+RUN apt-get remove --purge -y vim git mercurial subversion $(apt-mark showauto) && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /sense2vec
 
